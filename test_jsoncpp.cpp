@@ -20,7 +20,7 @@ void test_deserialize(const std::string &str) {
     Json::Value root;
     Json::Value data;
 
-    if (std::string::npos == str.find("{")) {
+    if (std::string::npos == str.find("{")) {   // jsoncpp对没有"{"会产生异常 parse不会出错 但root["action"].asString()这样代码会出错
         std::cout << "json invalid." << std::endl;
         return;
     }
