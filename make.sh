@@ -1,0 +1,1 @@
+g++ -g -o Test test_jsoncpp.cpp -I ./ -ljsoncpp
