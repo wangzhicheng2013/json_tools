@@ -3,6 +3,21 @@
 #include <json/json.h>
 void test_serialize(std::string &str) {
     Json::Value root;
+    Json::Value details;
+    Json::Value item;
+    root["code"] = "0";
+    iterm["id"] = "id";
+    iterm["name"] = "name";
+    details.append(iterm);
+    root["details"] = details;
+    root["erro_info"] = "";
+    
+    Json::StreamWriterBuilder builder;
+    str = Json::writeString(builder,root);
+    std::cout << str << std::endl;
+}
+void test_serialize_array(std::string &str) {
+    Json::Value root;
     Json::Value data;
     root["action"] = "run";
     data["number"] = 1;
